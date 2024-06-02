@@ -104,7 +104,5 @@
 -   Pham, D. T., & Dimov, S. S. (2001). "Rapid manufacturing: the technologies and applications of rapid prototyping and rapid tooling." Springer Science & Business Media.
 -   Jackson, T. R. (1996). "Analysis of the STL format and alternative representation of rapid prototyping data." Proceedings of the Institution of Mechanical Engineers, Part B: Journal of Engineering Manufacture, 210(3), 157-167.
 -   Kalo, D. (2019). "Calculating Volume and Area from STL Files." Medium, https://medium.com/@dj.kalo/calculating-volume-and-area-from-stl-files-4f5282b396c2.
--   Goodfellow, I., et al. (2014). "Generative Adversarial Nets." Advances in Neural Information Processing Systems, 27.
--   Kingma, D. P., & Welling, M. (2013). "Auto-Encoding Variational Bayes." arXiv preprint arXiv:1312.6114.
 - "NumPy-STL." PyPi, [https://pypi.org/project/numpy-stl/](https://pypi.org/project/numpy-stl/)
 -   NumPy-STL Documentation, [https://numpy-stl.readthedocs.io/en/latest/](https://numpy-stl.readthedocs.io/en/latest/)
