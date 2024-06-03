@@ -115,4 +115,8 @@
 - Write the mesh to file "cube.stl"
    - cube.save('cube.stl')
 
-
+## To-Do
+- Generate STL Files from input i.e vertices and faces
+- Display the STL Files on a UI
+- Extract Dimensions from STL Files, it's properties like surface areaa and volume.
+- Deploy it using React and Flask
