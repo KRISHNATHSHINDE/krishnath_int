@@ -192,3 +192,11 @@ By leveraging these datasets and pre-trained algorithms, researchers and enginee
 -   **Zhang, H., Zhao, Q., & Li, Z. (2017). Mesh Generation from 2D Images for Engineering Applications. International Journal of Engineering Research and Applications, 7(3), 55-62.**
     
     -   [Paper Link](https://link.springer.com/article/10.1007/s10596-017-9654-z?error=cookies_not_supported&code=292f2221-b125-454b-b388-1a0314986e0f)
+ 
+-   **MATHEMATICAL MODELLING OF SOLID PROPE-LLANT GRAIN GEOMETRY SUITABLE FOR MULTI BARREL ROCKET LAUNCHER APPLICATIONS**
+  
+    - [Paper Link](https://www.researchgate.net/publication/271907022_MATHEMATICAL_MODELLING_OF_SOLID_PROPE-LLANT_GRAIN_GEOMETRY_SUITABLE_FOR_MULTI_BARREL_ROCKET_LAUNCHER_APPLICATIONS)
+ 
+-   **Reverse Design of Solid Propellant Grain for a Performance-Matching Goal: Shape Optimization via Evolutionary Neural Network**
+  
+    -   [Paper Link](https://www.mdpi.com/2226-4310/9/10/552#:~:text=Open%20AccessArticle-,Reverse%20Design%20of%20Solid%20Propellant%20Grain%20for%20a%20Performance%2DMatching,Optimization%20via%20Evolutionary%20Neural%20Network)
