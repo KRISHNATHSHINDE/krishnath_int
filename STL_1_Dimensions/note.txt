@@ -1,0 +1,2 @@
+Install Dependencies
+npm install @react-three/fiber @react-three/drei
