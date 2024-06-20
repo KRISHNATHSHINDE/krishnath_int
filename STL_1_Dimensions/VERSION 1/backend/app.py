@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify
 from stl import mesh
 import numpy as np
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # This will enable CORS for all routes
 
 def calculate_surface_area(stl_mesh):
     triangles = stl_mesh.vectors
