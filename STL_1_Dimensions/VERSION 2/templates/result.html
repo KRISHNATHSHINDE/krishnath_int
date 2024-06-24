@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STL File Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #stlViewer { width: 600px; height: 400px; margin: 20px auto; }
+    </style>
+</head>
+<body>
+    <h1>STL File Results</h1>
+    <p><strong>X-Dimension:</strong> {{ x_dim }}</p>
+    <p><strong>Y-Dimension:</strong> {{ y_dim }}</p>
+    <p><strong>Z-Dimension:</strong> {{ z_dim }}</p>
+    <p><strong>Surface Area:</strong> {{ surface_area }}</p>
+    <p><strong>Volume:</strong> {{ volume }}</p>
+
+    <h2>STL Viewer</h2>
+    <div id="stlViewer"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/STLLoader.js"></script>
+    <script>
+        const stlPath = "{{ url_for('static', filename='uploads/' + filename) }}";
+
+        // Set up the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(600, 400);
+        document.getElementById('stlViewer').appendChild(renderer.domElement);
+
+        // Add light
+        const light = new THREE.DirectionalLight(0xffffff);
+        light.position.set(1, 1, 1).normalize();
+        scene.add(light);
+
+        // Load the STL file
+        const loader = new THREE.STLLoader();
+        loader.load(stlPath, function (geometry) {
+            const material = new THREE.MeshPhongMaterial({ color: 0x555555, specular: 0x111111, shininess: 200 });
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            // Center the camera on the object
+            const middle = new THREE.Vector3();
+            geometry.computeBoundingBox();
+            geometry.boundingBox.getCenter(middle);
+            mesh.geometry.center();
+            camera.position.z = middle.length() * 2.5;
+
+            // Render the scene
+            function animate() {
+                requestAnimationFrame(animate);
+                mesh.rotation.x += 0.00;
+                mesh.rotation.y += 0.01;
+                renderer.render(scene, camera);
+            }
+            animate();
+        });
+
+        // Add window resize handling
+        window.addEventListener('resize', function () {
+            const width = 600;
+            const height = 400;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+</body>
+</html>
