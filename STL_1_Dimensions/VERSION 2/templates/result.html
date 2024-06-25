@@ -10,11 +10,11 @@
 </head>
 <body>
     <h1>STL File Results</h1>
-    <p><strong>X-Dimension:</strong> {{ x_dim }}</p>
-    <p><strong>Y-Dimension:</strong> {{ y_dim }}</p>
-    <p><strong>Z-Dimension:</strong> {{ z_dim }}</p>
-    <p><strong>Surface Area:</strong> {{ surface_area }}</p>
-    <p><strong>Volume:</strong> {{ volume }}</p>
+    <p><b>X-Dimension:</b> {{ x_dim }}</p>
+    <p><b>Y-Dimension:</b> {{ y_dim }}</p>
+    <p><b>Z-Dimension:</b> {{ z_dim }}</p>
+    <p><b>Surface Area:</b> {{ surface_area }}</p>
+    <p><b>Volume:</b> {{ volume }}</p>
 
     <h2>STL Viewer</h2>
     <div id="stlViewer"></div>
@@ -32,14 +32,14 @@
         document.getElementById('stlViewer').appendChild(renderer.domElement);
 
         // Add light
-        const light = new THREE.DirectionalLight(0xffffff);
+        const light = new THREE.DirectionalLight(0xffffff, 1);
         light.position.set(1, 1, 1).normalize();
         scene.add(light);
 
         // Load the STL file
         const loader = new THREE.STLLoader();
         loader.load(stlPath, function (geometry) {
-            const material = new THREE.MeshPhongMaterial({ color: 0x555555, specular: 0x111111, shininess: 200 });
+            const material = new THREE.MeshPhongMaterial({ color: 0x555555 , specular: 0x111111, shininess: 0 });
             const mesh = new THREE.Mesh(geometry, material);
             scene.add(mesh);
 
@@ -55,6 +55,8 @@
                 requestAnimationFrame(animate);
                 mesh.rotation.x += 0.00;
                 mesh.rotation.y += 0.01;
+                // mesh.rotation.y = -3+mouseX/window.innerWidth * 3;
+                // mesh.rotation.x = -1.2 +mouseY *2.5/ window.innerHeight;
                 renderer.render(scene, camera);
             }
             animate();
@@ -68,6 +70,11 @@
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
         });
+
+        document.onmousemove = (e) => { I
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        }
     </script>
 </body>
 </html>
