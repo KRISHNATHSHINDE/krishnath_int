@@ -9,3 +9,7 @@ Predictive Maintenance
 Digital Twins
 
 https://modelnet.cs.princeton.edu/
+
+http://3dgan.csail.mit.edu/
+
+https://github.com/zck119/3dgan-release
